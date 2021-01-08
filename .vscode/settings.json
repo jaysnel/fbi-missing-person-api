@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ab648da3-1dee-4196-9abe-d7c05c8ea4e7/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/fbimissingpersonapi",
+    "appService.deploySubpath": "."
+}
