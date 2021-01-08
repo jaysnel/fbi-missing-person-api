@@ -25,6 +25,12 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('combined'));
 
+//Main Home
+app.get('/', (req, res) => {
+
+     return res.send("Welcome!");
+});
+
 
 //Return All Data
 app.get('/v1/all', (req, res) => {
