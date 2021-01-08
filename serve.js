@@ -28,7 +28,7 @@ app.use(morgan('combined'));
 //Main Home
 app.get('/', (req, res) => {
 
-     return res.send("Welcome!");
+     return res.send("Welcome To Missing Person DB.");
 });
 
 
