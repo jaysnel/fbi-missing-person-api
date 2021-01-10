@@ -27,7 +27,6 @@ app.use(morgan('combined'));
 
 //Main Home
 app.get('/', (req, res) => {
-
      return res.send("Welcome To Missing Person DB.");
 });
 
@@ -47,10 +46,14 @@ app.get('/v1/all', (req, res) => {
           res.send(data);
           client.close();
           });
-     
      }
 
-     getFullList();
+     return getFullList();
+});
+
+//for 404 request, make sure to keep LAST
+app.get('*', (req, res) => {
+     return res.send('Error json data needs to go here');
 });
 
 //Other Functions
