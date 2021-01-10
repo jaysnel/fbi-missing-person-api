@@ -53,7 +53,7 @@ app.get('/v1/all', (req, res) => {
 
 //for 404 request, make sure to keep LAST
 app.get('*', (req, res) => {
-     return res.send('Error json data needs to go here');
+     return res.send('Error json data needs to go here at some point');
 });
 
 //Other Functions
