@@ -4,5 +4,5 @@ This is a project to make more aware of missing children. This project takes dat
 
 This project is for non-commercial, and not for profit.
 
-Call get request to:
+Call GET request to:
 https://fbimissingpersonapi.azurewebsites.net/v1/all

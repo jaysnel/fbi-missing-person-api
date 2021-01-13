@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const path = require('path');
 
 //MongoDB data
 const mongodb = require('mongodb');
@@ -25,13 +26,18 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('combined'));
 
+//Using html/css files to render for / page
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static('public'));
+
 //Main Home
 app.get('/', (req, res) => {
-     return res.send("Welcome To Missing Person DB.");
+     return res.sendFile('home.html', { root: app.get('views') });
 });
 
 
 //Return All Data
+//REMINDER TO SELF: make sure to update README(any content in general) if path ever changes
 app.get('/v1/all', (req, res) => {
 
      let getFullList = async() => {
