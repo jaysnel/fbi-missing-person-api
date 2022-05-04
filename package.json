@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "FBI Missing Persons API",
   "main": "serve.js",
-  "start": "node server.js",
+  "start": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
