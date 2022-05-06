@@ -7,13 +7,52 @@ This project is for non-commercial, and not for profit.
 Call GET request to: (Note that heroku goes to sleep after some time, so you may need to hit this and wait awhile. Sorry, job doesnt pay me enough to have things continuously running hot :shrug-emoji:)
 https://fbi-missing-person-api.herokuapp.com/v1/all
 
-Data uses mongoDB so you will need to create an account(free) and use these environment variables for the app to run succesfully:
+To run locally:
 
+1. Pull down both https://github.com/jaysnel/fbi-missing-person-api and https://github.com/jaysnel/fbi-missing-person-db 
+
+2. cd into ```fbi-missing-person-api``` and run ```npm install```
+
+3. cd into ```fbi-missing-person-db``` and run ```npm install```
+
+4. Create an account at https://www.mongodb.com/ if you do not already have one
+
+5. Within mongoDB you will need to create a cluster that will incldue a database and a collection.(Tutorial coming soon for setting this up and I will link here later. For now, you'll need to use something like, I don't know, Google. I guess.)
+
+6. cd into ```fbi-missing-person-api``` and create a ```.env``` file within the directory and add:
 ```
 CLUSTER_USERNAME=******
 CLUSTER_PASSWORD=******
 DATABASE_NAME=******
 COLLECTION_NAME=******
 ```
+replacing ```******``` with your own values
 
-This data is being created from https://github.com/jaysnel/fbi-missing-person-db. Within this repo, you will need to make sure that ```COLLECTION_NAME``` and ```DATABASE_NAME``` match what is in the ```fbi-missing-person-db``` repo or it will fail. This repo calls the data sitting in that database, and the ```fbi-missing-person-db``` creates the data that it uses.
+7. cd into ```fbi-missing-person-db``` and create a ```.env``` file within the directory and add:
+```
+CLUSTER_USERNAME=******
+CLUSTER_PASSWORD=******
+DATABASE_NAME=******
+COLLECTION_NAME=******
+```
+replacing ```******``` with your own values
+
+If you do not wish to use twilio for SMS alerting, remove lines ```13-18```, ```117-120``` and ```129-140``` inside of ```fbi-missing-person-db/serve.js``` to avoid errors.
+
+If you wish to use twilio for SMS alerting, add:
+
+```
+TWILIOPHONENUMBER=******
+PHONENUMBER=******
+ACCOUNTSID=******
+AUTHTOKEN=******
+```
+replacing ```******``` with your own values
+
+8. cd into ```fbi-missing-person-db``` and run ```node serve.js```. 
+This will bring up a browser window for each person. This can be annoying at times. So to avoid, you can comment out line ```75``` and uncomment line ```76```. 
+
+9. cd into ```fbi-missing-person-api``` and run ```node serve.js```
+
+10. a. Navagitate to localhost:8080 
+10. b. Check console to verify port
