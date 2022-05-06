@@ -54,5 +54,6 @@ This will bring up a browser window for each person. This can be annoying at tim
 
 9. cd into ```fbi-missing-person-api``` and run ```node serve.js```
 
-10. a. Navagitate to localhost:8080 
-10. b. Check console to verify port
+10. Navagitate to localhost:8080 
+
+11. Check console to verify port
