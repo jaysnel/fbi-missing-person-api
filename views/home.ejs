@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://localhost 'unsafe-inline' 'unsafe-eval'" />
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.jpeg">
+    <title>Missing Person API</title>
+</head>
+<body>
+   <div class="container">
+
+    <span class="title">
+        Welcome to the <h1>Missing Person API</h1>!
+    </span>
+
+   <div class="content">
+       <div>
+           <p>This is a database of missing people built mostly from public information avaible on the FBI government website.</p>
+           <p>You can get full list from making a GET request in your preferred coding langauge to:</p>
+            <div class="api-full-list"><a target="_blank" href="https://fbi-missing-person-api.herokuapp.com/v1/all">https://fbi-missing-person-api.herokuapp.com/v1/all</a></div>
+            <br>
+            <p>You can also visit the <a target="_blank" href="https://github.com/jaysnel/fbi-missing-person-api">github</a> page.</p>
+        </div>
+   </div>
+   </div>
+
+   <div class="container">
+       List of data you will get back for each person:
+       <br/>
+       {<br/>
+            'Date(s) of Birth Used': string<br/>
+            Hair: string,<br/>
+            Eyes: string,<br/>
+            Height: string,<br/>
+            Weight: string,<br/>
+            Sex: string,<br/>
+            Race: string,<br/>
+            'Scars and Marks': string,<br/>
+            Name: string,<br/>
+            Details: string,<br/>
+            'Submit a Tip': string,<br/>
+            Found: boolean,<br/>
+            Headshot: string<br/>
+      }
+
+   </div>
+
+   <div class="container">
+     <div>
+    <h1><%= data.Name %></h1></div>
+    <img src="<%= data.Headshot %>" alt="" />
+    <div><%= data.Eyes %></div>
+            <div><span>DOB:</span> <%= data['Date(s) of Birth Used'] %></div>
+            <div><span>Detals:</span> <%= data['Place of Birth'] %></div>
+            <div><span>Eyes:</span> <%= data.Eyes %></div>
+            <div><span>Hair:</span> <%= data.Hair %></div>
+            <div><span>Height:</span> <%= data.Height %></div>
+            <div><span>Place Of Birth:</span> </div>
+            <div><span>Race:</span> <%= data.Race %></div>
+            <div><span>Sex:</span> <%= data.Sex %></div>
+            <div><span>Submit A Tip:</span> <%= data['Submit a Tip'] %></div>
+            <div><span>Weight:</span> <%= data.Weight %></div>
+  </div>
+
+</body>
+</html>
