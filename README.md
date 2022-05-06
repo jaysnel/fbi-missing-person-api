@@ -39,7 +39,7 @@ replacing ```******``` with your own values
 
 If you do not wish to use twilio for SMS alerting, remove lines ```13-18```, ```117-120``` and ```129-140``` inside of ```fbi-missing-person-db/serve.js``` to avoid errors.
 
-If you wish to use twilio for SMS alerting, add:
+If you wish to use twilio for SMS alerting, add the following along with the ```.env``` file in ```fbi-missing-person-db```:
 
 ```
 TWILIOPHONENUMBER=******
