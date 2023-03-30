@@ -5,7 +5,9 @@ This is a project to make more aware of missing children. This project takes dat
 This project is for non-commercial, and not for profit.
 
 Call GET request to: (Note that heroku goes to sleep after some time, so you may need to hit this and wait awhile. Sorry, job doesnt pay me enough to have things continuously running hot :shrug-emoji:)
-https://fbi-missing-person-api.herokuapp.com/v1/all
+
+GET Request url - https://fbi-missing-person-api.herokuapp.com/v1/all
+Example url - https://jaylan-portfolio-site.herokuapp.com/a-page-that-doesnt-exist 
 
 To run locally:
 
